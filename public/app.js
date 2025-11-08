@@ -143,26 +143,7 @@ function appendLink(containerId, ct) {
 
 function renderSections(primary) {
   const slot = document.getElementById("cta-slot");
-  slot.innerHTML = "";
-  // Primary CTA
-  const primaryBtn = document.createElement("a");
-  primaryBtn.className = "btn primary";
-  primaryBtn.href = getCtaUrl(primary);
-  const primaryIcon = iconFor(primary);
-  if (primaryIcon) {
-    const img = document.createElement('img');
-    img.src = primaryIcon;
-    img.className = 'link-icon';
-    img.alt = primary + ' icon';
-    primaryBtn.appendChild(img);
-  }
-  const label = document.createElement('span');
-  label.textContent = primary === "whatsapp" ? "Chat on WhatsApp" : "Leave a Google Review";
-  primaryBtn.appendChild(label);
-  primaryBtn.target = "_blank";
-  primaryBtn.rel = "noopener";
-  slot.appendChild(primaryBtn);
-  primaryBtn.addEventListener("click", () => logEvent("cta_click", { cta_clicked: primary }));
+  if (slot) slot.innerHTML = "";
 
   // Instagram + Facebook
   const instafb = document.getElementById('links-instafb');
