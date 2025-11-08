@@ -1,0 +1,97 @@
+:root {
+  --bg: #0b1020;
+  --bg2: #11162a;
+  --card: #121a2c;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent-2: #f59e0b;
+  --success: #22c55e;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background: var(--bg); color: var(--text); }
+.container { max-width: 1000px; margin: 0 auto; padding: 24px; position: relative; z-index: 2; }
+
+/* Animated background layers */
+.bg-anim { position: fixed; inset: 0; z-index: 0; background: radial-gradient(1200px 600px at 10% 10%, rgba(56,189,248,0.15), transparent 50%), radial-gradient(1000px 500px at 90% 20%, rgba(245,158,11,0.10), transparent 50%), linear-gradient(120deg, var(--bg), var(--bg2)); animation: glow 12s ease-in-out infinite alternate; }
+#astro-canvas { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.45; }
+@keyframes glow { from { filter: hue-rotate(0deg) brightness(1); } to { filter: hue-rotate(8deg) brightness(1.05); } }
+
+.share-top { position: fixed; top: 14px; right: 14px; z-index: 3; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; padding: 8px; cursor: pointer; backdrop-filter: blur(6px); }
+.share-top img { width: 22px; height: 22px; display: block; }
+
+.hero { text-align: center; margin-bottom: 24px; }
+.logo { width: clamp(160px, 24vw, 280px); height: auto; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 6px 28px rgba(0,0,0,0.35); }
+.subtitle { color: var(--muted); }
+
+/* Hero title split styling */
+.hero-title { margin: 0; line-height: 1.15; }
+.hero-title .hero-subtitle { display: block; margin-top: 6px; color: inherit; font-weight: 700; font-size: inherit; }
+
+.rating { display:flex; gap: 12px; align-items:center; justify-content:center; margin: 14px 0 4px; flex-wrap: wrap; }
+.rating-left { display:flex; align-items:center; gap:12px; }
+.stars span { color: #ffd700; font-size: 20px; margin-right: 2px; }
+.stars .half { color: #c2aa00; }
+.rating-text { color: var(--muted); }
+.google-pill { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#fff; color:#222; text-decoration:none; font-weight:600; }
+.google-pill .g-logo { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background: conic-gradient(from 0deg, #4285F4 0 25%, #EA4335 25% 50%, #FBBC05 50% 75%, #34A853 75% 100%); color:#fff; font-size:14px; font-weight:900; }
+
+.actions { margin-top: 10px; }
+
+.card { background: rgba(18,26,44,0.85); border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(6px); border-radius: 16px; padding: 16px; margin-bottom: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
+.btn { display: inline-flex; align-items:center; gap:8px; padding: 12px 16px; border-radius: 12px; text-decoration: none; }
+.btn.primary { background: var(--accent); color: #001221; font-weight: 700; }
+.btn.secondary { background: var(--accent-2); color: #1f2937; font-weight: 700; }
+.btn.outline { border: 1px solid rgba(255,255,255,0.25); color: var(--text); background: transparent; }
+.btn.outline:hover { border-color: rgba(255,255,255,0.4); }
+.link { color: var(--accent); text-decoration: none; }
+.link:hover { text-decoration: underline; }
+.footer { text-align: center; color: var(--muted); margin-top: 24px; }
+
+.section-lead { margin: 0 0 8px; color: var(--text); opacity: 0.9; font-weight: 600; }
+
+/* Links grid with icons */
+.links-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.link-item { display:flex; align-items:center; gap:10px; padding:10px 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; transition: transform .2s ease, background .2s ease; }
+.link-item:hover { transform: translateY(-2px); background: rgba(255,255,255,0.06); }
+.link-icon { width: 24px; height: 24px; object-fit: contain; border-radius: 6px; }
+.link-text { color: var(--text); font-weight: 600; }
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .container { padding: 16px; }
+  .card { padding: 14px; }
+}
+
+/* Alignment improvements for social link items */
+.links-grid .link-item { align-items: center; gap: 12px; }
+.links-grid .link-item .link-icon { width: 28px; height: 28px; flex-shrink: 0; }
+.links-grid .link-item .link-text { margin-top: 2px; }
+
+/* Review block styles moved into Connect Now */
+.review-block { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px; }
+.review-block .stars { display:flex; align-items:center; gap:8px; color:#ffd35a; }
+.review-block .rating-copy { color:#cbd5e1; font-weight:500; }
+.review-block .review-copy { color:#e5e7eb; }
+.review-btn { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:999px; background:#fff; color:#111827; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+.review-btn .g-logo { display:inline-flex; width:20px; height:20px; border-radius:50%; background:conic-gradient(from 45deg, #ea4335 0 25%, #fbbc05 25% 50%, #34a853 50% 75%, #4285f4 75% 100%); color:#fff; font-weight:700; align-items:center; justify-content:center; font-size:12px; }
+.review-btn:hover { transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.18); }
+
+/* Icon spacing fine-tune */
+.links-grid .link-item { padding:14px 16px; }
+.links-grid .link-item .link-icon { width:30px; height:30px; margin-right:2px; }
+.links-grid .link-item .link-text { font-size:16px; }
+
+
+/* Center-align icon and text within link items */
+.links-grid .link-item { display:flex; align-items:center; gap:12px; }
+.links-grid .link-item .link-icon { width:32px; height:32px; display:block; flex-shrink:0; }
+.links-grid .link-item .link-text { margin:0; line-height:1.2; align-self:center; }
+
+/* Requested icon size and spacing update */
+.links-grid .link-item { gap:16px; }
+.links-grid .link-item .link-icon { width:36px; height:36px; }
+
+/* Ensure buttons with icons are centered */
+.btn, .link-button { display:inline-flex; align-items:center; gap:10px; }

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Follow JyotirSetu</title>
+  <meta name="description" content="Connect with JyotirSetu — WhatsApp, Instagram, Facebook, YouTube, and website." />
+  <link rel="stylesheet" href="./public/styles.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQGNCD55GL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag("js", new Date());
+    gtag("config", "G-EQGNCD55GL");
+  </script>
+  <link rel="icon" href="/public/Images/Favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/public/Images/Favicon.svg">
+</head>
+<body>
+  <div class="bg-anim"></div>
+  <canvas id="astro-canvas" aria-hidden="true"></canvas>
+  <button id="share-top" class="share-top" aria-label="Share this page"><img src="/public/Images/share.png" alt="Share" /></button>
+
+  <main class="container">
+    <header class="hero">
+      <img src="/public/Images/JyotirSetu%20Astrology%20Text.png" alt="JyotirSetu Astrology" class="logo" />
+      <h1 class="hero-title">JyotirSetu Astrology | Expert Guidance by
+        <span class="hero-subtitle">Astrologer Punita Sharma</span>
+      </h1>
+      <p class="subtitle">Daily astrology insights and guidance. Stay connected for updates and consultations.</p>
+
+      <div class="rating">
+        <div class="rating-left">
+          <div class="stars" aria-label="4.9 out of 5">
+            <span></span><span></span><span></span><span></span><span class="half"></span>
+          </div>
+          <div class="rating-text">
+            <strong>4.9</strong> / 5  <span id="rating-count">150+</span> reviews
+          </div>
+        </div>
+        <a class="google-pill" href="#" id="google-rating-link" target="_blank" rel="noopener" aria-label="Leave a Google review">
+          <span class="g-logo">G</span>
+          <span>Leave a Google Review</span>
+        </a>
+      </div>
+
+      <div class="actions">
+        <a class="btn outline" id="visit-website" href="https://www.jyotirsetu.com" target="_blank" rel="noopener">Visit Our Website</a>
+      </div>
+    </header>
+
+    <section id="primary-cta" class="card">
+      <h2>Connect Now</h2>
+      <div id="cta-slot"></div>
+      <div class="review-block" aria-label="Google review call to action">
+        <div class="stars" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span class="half"></span>
+        </div>
+        <div class="review-copy">Love our guidance? Leave a quick Google review.</div>
+        <a class="review-btn" id="google-review-btn" href="#" target="_blank" rel="noopener">
+          <span class="g-logo">G</span>
+          <span>Leave a Google Review</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="section-instafb" class="card">
+      <p class="section-lead">Follow us on Instagram and Facebook for daily updates and tips.</p>
+      <ul id="links-instafb" class="links-grid"></ul>
+    </section>
+
+    <section id="section-whatsapp" class="card">
+      <p class="section-lead">To connect with us, chat on WhatsApp — were here to help.</p>
+      <ul id="links-whatsapp" class="links-grid"></ul>
+    </section>
+
+    <section id="section-youtube" class="card">
+      <p class="section-lead">Love videos? Subscribe on YouTube for weekly guidance and live sessions.</p>
+      <ul id="links-youtube" class="links-grid"></ul>
+    </section>
+
+    <footer class="footer">
+      <small> <span id="year"></span> JyotirSetu Astrology. All rights reserved.</small>
+    </footer>
+  </main>
+
+  <!-- Config for client -->
+  <script>
+    window.FOLLOW_CONFIG = {
+      apiBase: "https://jyotirsetu.com",
+      whatsappNumber: "919266991298",
+      googleReviewUrl: "https://g.page/r/CXjH6HavONOeEBM/review",
+      instagramUrl: "https://www.instagram.com/jyotirsetu",
+      facebookUrl: "https://www.facebook.com/jyotirsetu",
+      youtubeUrl: "https://www.youtube.com/@JyotirSetu",
+      websiteUrl: "https://www.jyotirsetu.com",
+      whatsappPrefill: "Hi Punita Sharma, I would like to book a consult.",
+      icons: {
+        instagram: "/public/Images/Instagram_logo.png",
+        whatsapp: "/public/Images/Whatsapp_logo.png",
+        facebook: "/public/Images/Facebook_logo.png",
+        youtube: "/public/Images/Youtube_logo.png"
+      },
+      ratingValue: 4.9,
+      ratingCount: 150
+    };
+  </script>
+  <script>if (location.hostname === 'localhost') { window.FOLLOW_CONFIG.apiBase = 'http://localhost:4322'; }</script>
+  <script src="./public/app.js" type="module"></script>
+</body>
+</html>
+
+
+
